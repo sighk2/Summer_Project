@@ -28,6 +28,17 @@ function draw()
   //but the chunk 'images disappear if i comment this statement
   image(video,0,0,250,250);
   
+  //getting four chunks of width*height from the video 
+var v1 = get (0,0,w,h);
+var v2 = get (125,0,w,h);
+var v3 = get (0,125,w,h);
+var v4 = get(125,125,w,h);
+  //displaying them elsewhere on the canvas 
+image(v1,600,0);
+image(v3,800,0);
+image(v2,600,200);
+image(v4,800,200);
+  
   //vid.size(400, 300);
 
   /*var x,y,piece;
@@ -42,16 +53,7 @@ function draw()
    image ( piece, x+i*5, y+i*5);
   }
  }*/
-//getting four chunks of width*height from the video 
-var v1 = get (0,0,w,h);
-var v2 = get (125,0,w,h);
-var v3 = get (0,125,w,h);
-var v4 = get(125,125,w,h);
-  //displaying them elsewhere on the canvas 
-image(v1,600,0);
-image(v3,800,0);
-image(v2,600,200);
-image(v4,800,200);
+
 
 }
 
