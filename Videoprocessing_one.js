@@ -19,27 +19,17 @@ function setup()
 function draw()
 {
   
-  var im1 = video.get();
-  var im2=video.get();
-  var im3=video.get();;
-  var im4=video.get()
+  
   background(255);
   console.log(window.innerWidth);
   console.log(window.innerHeight);
-  //image(video,0,0,250,250);
-  //image(video,0,0,250,250);
+  //display the entire video
+  // I want to display just the chunks and not the video itself
+  //but the chunk 'images disappear if i comment this statement
+  image(video,0,0,250,250);
+  
   //vid.size(400, 300);
 
-  /*video.loadPixels();
-  var stepSize = round(constrain(mouseX / 8, 6, 32));
-  for (var y=0; y<height; y+=stepSize) {
-    for (var x=0; x<width; x+=stepSize) {
-      var i = y * width + x;
-      var darkness = (255 - video.pixels[i*4]) / 255;
-      var radius = stepSize * darkness;
-      ellipse(x, y, radius, radius);
-    }
-  }*/
   /*var x,y,piece;
   var step = 40;
  for ( var i=0; i<image.width ; i++)
@@ -52,12 +42,12 @@ function draw()
    image ( piece, x+i*5, y+i*5);
   }
  }*/
-
-var v1 = im1.get (0,0,w,h);
-//console.log(v1);
-var v2 = im2.get (125,0,w,h);
-var v3 = im3.get (0,125,w,h);
-var v4 = im4.get(125,125,w,h);
+//getting four chunks of width*height from the video 
+var v1 = get (0,0,w,h);
+var v2 = get (125,0,w,h);
+var v3 = get (0,125,w,h);
+var v4 = get(125,125,w,h);
+  //displaying them elsewhere on the canvas 
 image(v1,600,0);
 image(v3,800,0);
 image(v2,600,200);
